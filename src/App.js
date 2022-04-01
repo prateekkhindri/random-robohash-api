@@ -1,23 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from "./logo.svg";
+import { useState } from "react";
+import { Container } from "react-bootstrap";
+import "./App.css";
+import { SearchForm } from "./components/form/SearchForm";
+import { FavList } from "./components/list/FavList";
+import { Title } from "./components/title/Title";
 
 function App() {
+  const [favList, setFevList] = useState([]);
+
+  const addToFavList = (name) => {
+    setFevList([...favList, name]);
+  };
+
+  // 2. Removing an item from the list
+
+  const removeFromFavList = (name) => {
+    // console.log(name);
+    const tempList = favList.filter((movie) => movie !== name);
+    setFevList(tempList);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="wrapper">
+      <Container>
+        <Title />
+        <SearchForm addToFavList={addToFavList} />
+        <hr />
+        <FavList favList={favList} removeFromFavList={removeFromFavList} />
+      </Container>
     </div>
   );
 }
