@@ -5,7 +5,7 @@ export const FavList = ({ favList, removeFromFavList }) => {
   console.log(favList);
   return (
     <div>
-      <h4>My fav robot</h4>
+      <h4>My favorite robot</h4>
 
       <div className="robot-list">
         {favList.map((nm, i) => (

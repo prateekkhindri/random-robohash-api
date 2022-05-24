@@ -34,3 +34,6 @@ function App() {
 }
 
 export default App;
+
+// CHALLENGE
+// When a searched name already exists do not allow to add it to the list ???
