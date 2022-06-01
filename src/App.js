@@ -10,7 +10,11 @@ function App() {
   const [favList, setFevList] = useState([]);
 
   const addToFavList = (name) => {
-    setFevList([...favList, name]);
+    if (favList.includes(name)) {
+      return;
+    } else {
+      setFevList([...favList, name]);
+    }
   };
 
   // 2. Removing an item from the list

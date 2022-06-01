@@ -6,7 +6,7 @@
 
 .robot-list {
   display: flex;
-  font-display: row;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
 }

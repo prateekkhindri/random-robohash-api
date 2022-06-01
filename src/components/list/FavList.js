@@ -7,7 +7,7 @@ export const FavList = ({ favList, removeFromFavList }) => {
     <div>
       <h4>My favorite robot</h4>
 
-      <div className="robot-list">
+      <div className="robot-list mt-4">
         {favList.map((nm, i) => (
           <CustomCard
             key={i}
