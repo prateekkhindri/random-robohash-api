@@ -10,24 +10,20 @@ export const SearchForm = ({ addToFavList }) => {
   const handleOnChange = (e) => {
     const { value } = e.target;
     setName(value);
-    // console.log(e.target.value);
-    console.log(value);
   };
 
   const handleOnSubmit = (e) => {
     e.preventDefault();
     setRobot(name);
     setName("");
-    // console.log(e.target[0].value);
   };
 
   // 3. Removing the item searched when add to list is clicked
-  const addAndResetRobo = (name) => {
+  const addAndResetRobot = (name) => {
     addToFavList(name);
     setRobot();
   };
 
-  // console.log(robot);
   return (
     <div>
       <Form onSubmit={handleOnSubmit}>
@@ -50,11 +46,9 @@ export const SearchForm = ({ addToFavList }) => {
 
       <Row className="mt-5">
         <Col>
-          <CustomCard name={robot} fun={addAndResetRobo} />
+          <CustomCard name={robot} fun={addAndResetRobot} />
         </Col>
       </Row>
     </div>
   );
 };
-
-// 1. The add to list button, change to remove/delete from favs when the button is clicked

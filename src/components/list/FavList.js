@@ -16,10 +16,6 @@ export const FavList = ({ favList, removeFromFavList }) => {
             fun={removeFromFavList}
           />
         ))}
-        {/* <CustomCard name="test" />
-        <CustomCard name="test" />
-        <CustomCard name="test" />
-        <CustomCard name="test" /> */}
       </div>
     </div>
   );

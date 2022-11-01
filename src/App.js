@@ -1,4 +1,3 @@
-// import logo from "./logo.svg";
 import { useState } from "react";
 import { Container } from "react-bootstrap";
 import "./App.css";
@@ -7,22 +6,21 @@ import { FavList } from "./components/list/FavList";
 import { Title } from "./components/title/Title";
 
 function App() {
-  const [favList, setFevList] = useState([]);
+  const [favList, setFavList] = useState([]);
 
   const addToFavList = (name) => {
     if (favList.includes(name)) {
       return;
     } else {
-      setFevList([...favList, name]);
+      setFavList([...favList, name]);
     }
   };
 
   // 2. Removing an item from the list
 
   const removeFromFavList = (name) => {
-    // console.log(name);
     const tempList = favList.filter((movie) => movie !== name);
-    setFevList(tempList);
+    setFavList(tempList);
   };
 
   return (
@@ -38,6 +36,3 @@ function App() {
 }
 
 export default App;
-
-// CHALLENGE
-// When a searched name already exists do not allow to add it to the list ???
